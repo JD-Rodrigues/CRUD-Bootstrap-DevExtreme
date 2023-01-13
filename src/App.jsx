@@ -9,7 +9,7 @@ const store = new CustomStore({
     load: async function (loadOptions) {
         
         try {
-            const data = await fetch('http://localhost:3000');
+            const data = await fetch('https://crud-bootstrap-api.onrender.com');
             
             return data.json()
         } catch (error) {
@@ -18,7 +18,7 @@ const store = new CustomStore({
     },
     insert: async function (values) {
         console.log(values)
-        await fetch(`http://localhost:3000`, 
+        await fetch(`https://crud-bootstrap-api.onrender.com`, 
             {
                 headers: {"Content-type": "application/json; charset=UTF-8"},
                 method: "POST",
@@ -34,7 +34,7 @@ const store = new CustomStore({
             })
     },
     update: async function (key, values) {
-        await fetch(`http://localhost:3000/${key.id}`, 
+        await fetch(`https://crud-bootstrap-api.onrender.com/${key.id}`, 
             {
               headers: {"Content-type": "application/json; charset=UTF-8"},
               method: "PUT",
@@ -45,7 +45,7 @@ const store = new CustomStore({
         console.log(key)
     },
     remove: async function (key) {
-        await fetch(`http://localhost:3000/${key.id}`, {
+        await fetch(`https://crud-bootstrap-api.onrender.com/${key.id}`, {
             method: "DELETE"
         });   
 

@@ -1,22 +1,61 @@
-
+// 
 import React from 'react';
 import 'devextreme/dist/css/dx.light.css';
+import './App.css'
 import CustomStore from 'devextreme/data/custom_store';
 
 
 const store = new CustomStore({
     load: async function (loadOptions) {
-        const data = await fetch('http://localhost:3001');
-        return data.json()
+        
+        try {
+            const data = await fetch('http://localhost:3000');
+            
+            // if (Array.isArray(data.json())) {
+            //     return data.json()
+            // } else {
+            //     alert('Excesso de requisições ao banco de dados! Volte dentro de alguns instantes.')               
+                
+            // }
+            return data.json()
+        } catch (error) {
+            
+        }
     },
-    insert: function (values) {
-        return axios.post('/data', values);
+    insert: async function (values) {
+        console.log(values)
+        await fetch(`http://localhost:3000`, 
+            {
+                headers: {"Content-type": "application/json; charset=UTF-8"},
+                method: "POST",
+                body:JSON.stringify({
+                    data: {
+                        Nome:values.Nome,
+                        Data_de_nascimento: values.Data_de_nascimento,
+                        Data_de_admissão: values.Data_de_admissão,
+                        País: values.País,
+                        Função: values.Função                        
+                    }
+                })
+            })
     },
-    update: function (key, values) {
-        return axios.put(`/data/${key}`, values);
+    update: async function (key, values) {
+        await fetch(`http://localhost:3000/${key.id}`, 
+            {
+              headers: {"Content-type": "application/json; charset=UTF-8"},
+              method: "PUT",
+              body:JSON.stringify({
+                data: values
+              })
+            })
+        console.log(key)
     },
-    remove: function (key) {
-        return axios.delete(`/data/${key}`);
+    remove: async function (key) {
+        await fetch(`http://localhost:3000/${key.id}`, {
+            method: "DELETE"
+        });   
+
+        
     }
 });
 

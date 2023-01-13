@@ -1,4 +1,5 @@
-const mysql = require('mysql2/promise');
+import mysql from "mysql2/promise.js";
+
 
 
 // host Railway
@@ -133,10 +134,4 @@ const remove = async (id) => {
   
 }
 
-module.exports = {read, remove, create, update}
-
-// read().then(console.log)
-// create({Nome:'Márcio Bruno', Data_de_nascimento: '25-12-1945', Data_de_admissão: '05-08-1992', País: 'Brasil', Função: 'Atendente de telemarketing' })
-
-// update(8, {País: 'São Tomé e Príncipe'})
-// remove(6)
+export {read, remove, create, update}

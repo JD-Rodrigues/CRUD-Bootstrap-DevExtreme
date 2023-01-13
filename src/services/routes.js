@@ -1,9 +1,8 @@
-const {read} = require('./queries.js')
-const {remove} = require('./queries.js')
-const {create} = require('./queries.js')
-const {update} = require('./queries.js')
-
-const express = require('express')
+import { read } from './queries.js'
+import { remove } from './queries.js'
+import { update } from './queries.js'
+import { create } from './queries.js'
+import express from 'express'
 
 const router = express.Router()
 
@@ -29,4 +28,4 @@ router.put('/:id', async (req, res)=> {
   res.send(`status: ${res.statusMessage}`)
 })
 
-module.exports = {router}
+export default router

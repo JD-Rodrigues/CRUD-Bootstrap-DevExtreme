@@ -1,7 +1,7 @@
-const {read} = require('./queries.cjs')
-const {remove} = require('./queries.cjs')
-const {create} = require('./queries.cjs')
-const {update} = require('./queries.cjs')
+const {read} = require('./queries.js')
+const {remove} = require('./queries.js')
+const {create} = require('./queries.js')
+const {update} = require('./queries.js')
 
 const express = require('express')
 

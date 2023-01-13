@@ -11,15 +11,9 @@ const store = new CustomStore({
         try {
             const data = await fetch('http://localhost:3000');
             
-            // if (Array.isArray(data.json())) {
-            //     return data.json()
-            // } else {
-            //     alert('Excesso de requisições ao banco de dados! Volte dentro de alguns instantes.')               
-                
-            // }
             return data.json()
         } catch (error) {
-            
+            console.log(error)
         }
     },
     insert: async function (values) {

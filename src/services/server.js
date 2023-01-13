@@ -1,4 +1,4 @@
-const {router} = require('./routes.cjs')
+const {router} = require('./routes.js')
 
 const express = require('express')
 const cors = require('cors')

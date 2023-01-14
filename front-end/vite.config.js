@@ -12,9 +12,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-        "devextreme/ui": 'devextreme/esm/ui'
+        "devextreme/ui": 'devextreme/esm/ui',
     }
-}
+  }
 })
 
 

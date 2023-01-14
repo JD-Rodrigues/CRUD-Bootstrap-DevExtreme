@@ -1,7 +1,6 @@
 // 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'devextreme/dist/css/dx.light.css';
-import './App.css'
 import CustomStore from 'devextreme/data/custom_store';
 
 
@@ -61,6 +60,7 @@ import {
   Editing
 } from 'devextreme-react/data-grid';
 
+
 // const data = [{
 //         "FullName": "Durvalino dos Santos",
 //         "BirthDate": "22/05/1986",
@@ -71,32 +71,48 @@ import {
 
 
 function App() {
+
+  const [bg, setBg] = useState('bg-danger')
+  const onRowPrepared = (e) => {
+    e.rowElement.addClass("bg-danger");
+  }
   return (
-      <div className="App">
-          <DataGrid
+      <div>
+          <h3 className='text-md-center'>Quadro de funcionários</h3>
+          <DataGrid 
+            rowPrepared={onRowPrepared}
             dataSource={store}
           >
-              {/* ... */}
-              <Column dataField="Nome">
+              <Column 
+                  cssClass='bg-secondary text-white bg-gradient' 
+                  dataField="Nome">
                   <RequiredRule />
               </Column>
-              <Column dataField="Função">
+              <Column 
+                  cssClass='bg-secondary text-white bg-gradient' 
+                  dataField="Função">
                   <RequiredRule />
               </Column>
               <Column
+                  cssClass='bg-secondary text-white bg-gradient'  
                   dataField="Data_de_nascimento">
                   <RequiredRule />
               </Column>
               <Column
+                  cssClass='bg-secondary text-white bg-gradient'
                   dataField="Data_de_admissão">
                   <RequiredRule />
               </Column>
               {/* ... */}
               <Column
-                  dataField="País">
+                  dataField="País"
+                  cssClass='bg-secondary text-white bg-gradient'
+              >
+                    
                   <RequiredRule />
               </Column>
-              <Editing
+              <Editing 
+                  useIcons={true}
                   mode="popup"
                   allowUpdating={true}
                   allowDeleting={true}

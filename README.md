@@ -18,9 +18,9 @@ Projeto desenvolvido como teste técnico para uma vaga de desenvolvedor front-en
   
 ## Tecnologias utilizadas:
 -  **DevExtreme** - dessa suíte de componentes UI foi utilizado o componente DataGrid, tabela que renderiza os dados na tela.
--  **React** - utilizado para implementar o DevExtreme DataGrid no projeto através de componentização.
+-  **React** - utilizado para implementar o DevExtreme DataGrid no projeto, através de componentização.
 -  **Bootstrap** - biblioteca CSS utilizada na estilização da interface.
--  **Sass** - foi utilizado junto ao Bootstrap, visto que os componentes do DevExtreme já tem estilização própria, e é inviável inserir classes da biblioteca CSS neles uma vez que já são inseridos no DOM com as classes do estilo. Modificar seus estilos requer a criação de uma stylesheet customizada, com regras que sobrepõem os estilos originais. Então, o Sass foi pré-processador CSS utilizado para estender as classes Bootstrap e criar a stylesheet contendo o novo estilo para o DataGrid.
+-  **Sass** - foi utilizado junto ao Bootstrap, visto que os componentes do DevExtreme já tem estilização própria, e é inviável inserir classes da biblioteca CSS neles, uma vez que já são inseridos no DOM com as classes do estilo. Modificar seus estilos requer a criação de uma stylesheet customizada, com regras que sobrepõem os estilos originais. Então, o Sass foi o pré-processador CSS utilizado para estender as classes Bootstrap e criar a stylesheet contendo o novo estilo para o DataGrid.
 -  **NodeJs** - possibilitou o uso de Javascript na criação da lógica do back-end.
 -  **Express** - utilizado na criação da API para comunicação entre o front-end e o banco de dados.
 -  **MySQL** - banco de dados utilizado na persistência das informações.

@@ -3,12 +3,13 @@ import React from 'react';
 import 'devextreme/dist/css/dx.light.css';
 import CustomStore from 'devextreme/data/custom_store';
 
+// Esta é uma built-in class do framework DevExtreme onde são feitas requisições aos endpoints do back-end, para a obtenção dos dados.
 
 const store = new CustomStore({
     load: async function (loadOptions) {
         
         try {
-            const data = await fetch('https://crud-bootstrap-api.onrender.com');
+            // const data = await fetch('https://crud-bootstrap-api.onrender.com');
             
             return data.json()
         } catch (error) {
@@ -56,21 +57,13 @@ import {
   DataGrid,
   Column,
   Toolbar,
-  // ...
   RequiredRule,
   Editing,
   SearchPanel
 } from 'devextreme-react/data-grid';
 
 
-// const data = [{
-//         "FullName": "Durvalino dos Santos",
-//         "BirthDate": "22/05/1986",
-//         "HireDate": "29/02/2022",
-//         "Country": "Brasil", 
-//         "Position": "Product Owner"
-//     },]
-
+// Renderização da tabela 
 
 function App() {
 
@@ -107,8 +100,7 @@ function App() {
               </Column>
               {/* ... */}
               <Column
-                  dataField="País"
-                  
+                  dataField="País"                  
               >
                     
                   <RequiredRule />
@@ -119,10 +111,7 @@ function App() {
                   allowUpdating={true}
                   allowDeleting={true}
                   allowAdding={true}
-              />
-              
-
-              
+              />               
           </DataGrid>
       </div>
   );

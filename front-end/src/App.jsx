@@ -9,7 +9,7 @@ const store = new CustomStore({
     load: async function (loadOptions) {
         
         try {
-            // const data = await fetch('https://crud-bootstrap-api.onrender.com');
+            const data = await fetch('https://crud-bootstrap-api.onrender.com');
             
             return data.json()
         } catch (error) {

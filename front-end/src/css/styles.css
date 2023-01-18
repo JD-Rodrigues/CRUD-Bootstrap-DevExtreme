@@ -10772,12 +10772,10 @@ textarea.form-control-lg {
   }
 }
 .bg {
-  background: linear-gradient(45deg, rgb(67, 89, 192) 0%, rgb(202, 81, 193) 100%);
+  background: linear-gradient(45deg, rgb(67, 89, 192) 0%, rgb(202, 81, 193));
+  background-repeat: no-repeat;
   padding: 30px !important;
-}
-
-.text-md-center {
-  background-color: #6f42c1;
+  height: 100vh;
 }
 
 .dx-datagrid-header-panel {

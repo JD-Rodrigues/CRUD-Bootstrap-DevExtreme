@@ -9,7 +9,7 @@ const connection = async () => {
   return connection
 }
 
-// It receives a table name in the 1st parameter and an object in the 2nd parameter, containing columns and its values to create a new row in the table.
+// Esta função recebe um objeto contendo as colunas e os valores da row a ser criada na tabela "funcionários" do banco de dados
 
 const create = async (info) => {
   let columns; 
@@ -17,8 +17,8 @@ const create = async (info) => {
   const infoValues = Object.values(info)
   const infoKeys = Object.keys(info)
 
+  //Aqui é feita uma iteração sobre a lista de keys do objeto recebido como argumento, concatenando cada key a uma string atribuída à variável "columns". O resultado será algo como: "title, board_order, class".
 
-  // It iterates over the keys of the object, concatenating each key in a string assigned to the variable "columns". The result seems like: "title, board_order, class"
   infoKeys.forEach((key, index)=>{
     switch (index) {
       case 0:
@@ -33,7 +33,8 @@ const create = async (info) => {
   })
 
 
-// It iterates over the value of the object. To each value iterated it concatenates a question tag in a string assigned to the variable "howMuchValues". The result seems like: "?, ?, ?"
+//Aqui é feita uma iteração sobre a lista de valores do objeto recebido como argumento. A cada loop, um ponto de interrogação (?) será concatenado a uma string atribuída à variável "howMuchValues". O resultado será algo como: "?, ?, ?".
+
   infoValues.forEach((value, index)=>{
     switch (index) {
       case 0:
@@ -48,7 +49,8 @@ const create = async (info) => {
   })
 
 
-  // It get together value of the three variables (columns, howMuchValues and infoValues) in a query string. The resulting seems like: "INSERT INTO database.table (title, board_order, class) VALUES (?, ?, ?), ["To do", 3, "success"]"
+  // Aqui os valores das três variáveis (columns, howMuchValues and infoValues) é interpolado em uma string de requisição ao banco de dados. O resultado será semelhante a: "INSERT INTO database.table (title, board_order, class) VALUES (?, ?, ?), ['To do', 3, 'success']".
+
   try {
     const conn = await connection()
     await conn.query(`INSERT INTO funcionários(${columns}) VALUES(${howMuchValues})`, infoValues, (err, result)=> {
@@ -63,6 +65,9 @@ const create = async (info) => {
 
 }
 
+
+//Retorna todas as linhas da tabela "Funcionários" como um array de objetos, em que cada objeto representará uma linha.
+
 const read = async () => {  
   try {      
     const conn = await connection()
@@ -73,9 +78,11 @@ const read = async () => {
   }  
 }
 
-// It updates a row. 
-// Inputs: 1st - table name, 2nd - row id, 3rd - an object containing columns to be updated and the new values.
-// The spreading of this info in the implementation seems "create" function explained above.
+
+// Esta função atualiza uma linha da tabela "funcionários".
+// Recebe 2 parâmetros: 1º - o id do funcionário; 2º - um objeto contendo as colunas a serem atualizadas e os novos valores.
+// Realiza um processo semelhante ao que é implementado na função create() (vide comentário), para requisitar a atualização das informações do funcionário.
+
 const update = async (id, info) => {
   try {
     const keys = Object.keys(info)
@@ -114,7 +121,9 @@ const update = async (id, info) => {
   
 }
 
-//It receives a table name and a row id and removes the row from the table.
+
+//Recebe o id de um funcionário e remove da base de dados o funcionário cujo id é idêntico ao passado como argumento nesta função.
+
 const remove = async (id) => {
   try {
     const conn = await connection()

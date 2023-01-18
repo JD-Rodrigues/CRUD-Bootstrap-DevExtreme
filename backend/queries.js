@@ -4,7 +4,7 @@ import mysql from "mysql2/promise.js";
 
 // host Railway
 const connection = async () => {
-  const connection = await mysql.createConnection("mysql://root:7A8tvvvxbYhG2lXrWqrO@containers-us-west-30.railway.app:7064/railway"); 
+  const connection = await mysql.createConnection(proccess.env.CONN_SETTINGS); 
   console.log('Conectou ao mysql')
   return connection
 }

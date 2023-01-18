@@ -3,13 +3,18 @@
  
   
 .bg {
-  background: linear-gradient(45deg, rgba(67,89,192,1) 0%, rgba(202,81,193,1) 100%);
-  padding: 30px !important;
+  background: linear-gradient(45deg, rgba(67,89,192,1) 0%, rgba(202,81,193,100%));
+  background-repeat: no-repeat;
+  padding: 10px 30px !important;
+  height: 100vh;
+}
+
+.logo {
+  width: 150px;
 }
 
 .text-md-center {
   @extend .text-light;
-  background-color: $purple;
 }
 
 .dx-gridbase-container {

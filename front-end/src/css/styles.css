@@ -10774,8 +10774,12 @@ textarea.form-control-lg {
 .bg {
   background: linear-gradient(45deg, rgb(67, 89, 192) 0%, rgb(202, 81, 193));
   background-repeat: no-repeat;
-  padding: 30px !important;
+  padding: 10px 30px !important;
   height: 100vh;
+}
+
+.logo {
+  width: 150px;
 }
 
 .dx-datagrid-header-panel {

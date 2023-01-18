@@ -1,4 +1,3 @@
-// 
 import React from 'react';
 import 'devextreme/dist/css/dx.light.css';
 import CustomStore from 'devextreme/data/custom_store';
@@ -6,7 +5,7 @@ import CustomStore from 'devextreme/data/custom_store';
 // Esta é uma built-in class do framework DevExtreme onde são feitas requisições aos endpoints do back-end, para a obtenção dos dados.
 
 const store = new CustomStore({
-    load: async function (loadOptions) {
+    load: async function () {
         
         try {
             const data = await fetch('https://crud-bootstrap-api.onrender.com');
@@ -68,7 +67,8 @@ import {
 function App() {
 
   return (
-      <div>
+      <div className='d-flex flex-column align-items-center'>
+          <img className='logo' src='logo.png' />
           <h3 className='text-center mb-4 text-light title'>Quadro de funcionários</h3>
           <DataGrid toolbar={true}
             dataSource={store}

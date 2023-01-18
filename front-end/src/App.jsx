@@ -1,5 +1,5 @@
 // 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'devextreme/dist/css/dx.light.css';
 import CustomStore from 'devextreme/data/custom_store';
 

@@ -6,6 +6,8 @@
 <p>d-Grid é um CRUD em formato de tabela de cadastro de funcionários de uma empresa.</p>
 <p>Live do projeto: <a href="https://crud-bootstrap-dev-extreme.vercel.app/">clique aqui.</a></p>
 
+<div align="center"><img  src="./front-end/public/demo.gif" /></div>
+
 ## Objetivo:
 Projeto desenvolvido como teste técnico para uma vaga de desenvolvedor front-end.
 

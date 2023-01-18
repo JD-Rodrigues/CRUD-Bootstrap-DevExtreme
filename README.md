@@ -1,48 +1,28 @@
 <p align="center">
-  <img width=200 src="./front-end/public/logo-color.png" />
+  <img width=150 src="./front-end/public/logo-color.png" />
 </p>
 
 ## Descrição:
-<p>d-Grid é um CRUD em formato de tabela de cadastro de funcionários.</p>
-<p>Live do projeto: <a href="https://d-trello-front.onrender.com/">clique aqui.</a></p><br>
-<div align="center"><img  src="./front-end/view/assets/images/screenshots/d-trello-desktop-demo.gif" /></div><br>
-| tablet   | smartphone |
-|----------|:---------|
-| <img  src="link da screenchot de tablet" > | <img  src="link da screenchot de smartphone" > | 
+<p>d-Grid é um CRUD em formato de tabela de cadastro de funcionários de uma empresa.</p>
+<p>Live do projeto: <a href="https://crud-bootstrap-dev-extreme.vercel.app/">clique aqui.</a></p>
 
 ## Objetivo:
-Feito sob demanda? Parte de um curso? Visou algum aprendizado? Resolve um problema?
+Projeto desenvolvido como teste técnico para uma vaga de desenvolvedor front-end.
 
 ## Funcionalidades:
-- Feature 1.
-- Feature 2
+- Cadastra, lê, atualiza e deleta dados.
+- Informações persistidas em banco de dados.
+- Funciona online.
   
 ## Tecnologias utilizadas:
-- **Tecnologia** - uso
-
-## Status do projeto:
-Descrição sobre o status do projeto
-
-<h2>Como rodar a aplicação localmente (incluindo os testes ):</h2>
-<p>Passo-a-passo, com exemplos de código devidamente formatados</p>
-## Desenvolvedores:
-[<img src="Link de foto de perfil do desenvolvedor" width=115 > <br> <sub> Nome do desenvolvedor </sub>](Link do github do desenvolvedor) |
-| :---: |
-
-## Contribuintes:
-[<img src="Link de foto de perfil contribuinte" width=115 > <br> <sub> Nome do contribuinte </sub>](Link do github do contribuinte) |
-| :---: |
-
-##Resolvendo problemas:
-- Problema 1
-    - descrição da solução
-
-
-CÓDIGO PARA SUMÁRIO
-
-### Tabela de Conteúdos
-   * [Nome do tópico visivel](#nome-do-tópico)
-
-### Nome do Tópico
-
-    
+-  **DevExtreme** - dessa suíte de componentes UI foi utilizado o componente DataGrid, tabela que renderiza os dados na tela.
+-  **React** - utilizado para implementar o DevExtreme DataGrid no projeto através de componentização.
+-  **Bootstrap** - biblioteca CSS utilizada na estilização da interface.
+-  **Sass** - foi utilizado junto ao Bootstrap, visto que os componentes do DevExtreme já tem estilização própria, e é inviável inserir classes da biblioteca CSS neles uma vez que já são inseridos no DOM com as classes do estilo. Modificar seus estilos requer a criação de uma stylesheet customizada, com regras que sobrepõem os estilos originais. Então, o Sass foi pré-processador CSS utilizado para estender as classes Bootstrap e criar a stylesheet contendo o novo estilo para o DataGrid.
+-  **NodeJs** - possibilitou o uso de Javascript na criação da lógica do back-end.
+-  **Express** - utilizado na criação da API para comunicação entre o front-end e o banco de dados.
+-  **MySQL** - banco de dados utilizado na persistência das informações.
+-  **Vite** - ferramenta utilizada na criação do ambiente de desenvolvimento.
+-  **Railway** - hospedagem do banco de dados.
+-  **Render** - hospedagem do servidor.
+-  **Vercel** - hospedagem do front-end.

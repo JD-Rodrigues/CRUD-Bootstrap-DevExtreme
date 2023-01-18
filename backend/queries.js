@@ -4,7 +4,7 @@ import mysql from "mysql2/promise.js";
 
 // host Railway
 const connection = async () => {
-  const connection = await mysql.createConnection(`${proccess.env.CONN_SETTINGS}`); 
+  const connection = await mysql.createConnection(`${env.CONN_SETTINGS}`); 
   console.log('Conectou ao mysql')
   return connection
 }

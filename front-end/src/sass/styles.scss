@@ -1,13 +1,48 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
-
+@import "../../node_modules/bootstrap/scss/variables";
  
   
 .bg {
   background: linear-gradient(45deg, rgba(67,89,192,1) 0%, rgba(202,81,193,1) 100%);
   padding: 30px !important;
-
 }
-  
 
+.text-md-center {
+  @extend .text-light;
+  background-color: $purple;
+}
+
+.dx-gridbase-container {
+  @extend .px-5, .py-3, .container-md, .rounded;
+  
+}
+
+.dx-datagrid-header-panel {
+  background-color: transparent;
+}
+
+table {  
+  @extend .table, .table-striped;  
+  
+}
+
+.dx-datagrid-headers {
+  @extend .bg-dark;
+}
+
+.dx-datagrid-text-content {
+  @extend .text-light;
+}
+
+.dx-link::before {
+  color: $purple;
+}
+
+.dx-button-content{
+  background-color: $purple;
+}
+
+.dx-icon-edit-button-addrow::before {
+  @extend .text-light;
+}
   

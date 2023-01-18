@@ -55,9 +55,11 @@ const store = new CustomStore({
 import {
   DataGrid,
   Column,
+  Toolbar,
   // ...
   RequiredRule,
-  Editing
+  Editing,
+  SearchPanel
 } from 'devextreme-react/data-grid';
 
 
@@ -72,41 +74,41 @@ import {
 
 function App() {
 
-  const [bg, setBg] = useState('bg-danger')
-  const onRowPrepared = (e) => {
-    e.rowElement.addClass("bg-danger");
-  }
   return (
       <div>
-          <h3 className='text-md-center'>Quadro de funcionários</h3>
-          <DataGrid 
-            rowPrepared={onRowPrepared}
+          <h3 className='text-center mb-4 text-light title'>Quadro de funcionários</h3>
+          <DataGrid toolbar={true}
             dataSource={store}
           >
+          <SearchPanel 
+            visible={true}
+          />
+              <Toolbar>
+            </Toolbar>  
               <Column 
-                  cssClass='bg-secondary text-white bg-gradient' 
+                  
                   dataField="Nome">
                   <RequiredRule />
               </Column>
               <Column 
-                  cssClass='bg-secondary text-white bg-gradient' 
+                  
                   dataField="Função">
                   <RequiredRule />
               </Column>
               <Column
-                  cssClass='bg-secondary text-white bg-gradient'  
+                  
                   dataField="Data_de_nascimento">
                   <RequiredRule />
               </Column>
               <Column
-                  cssClass='bg-secondary text-white bg-gradient'
+                  
                   dataField="Data_de_admissão">
                   <RequiredRule />
               </Column>
               {/* ... */}
               <Column
                   dataField="País"
-                  cssClass='bg-secondary text-white bg-gradient'
+                  
               >
                     
                   <RequiredRule />
@@ -118,6 +120,9 @@ function App() {
                   allowDeleting={true}
                   allowAdding={true}
               />
+              
+
+              
           </DataGrid>
       </div>
   );
